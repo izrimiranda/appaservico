@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.image.ImageView?>
+
+<AnchorPane fx:id="idTabTesouraria" prefHeight="607.0" prefWidth="1252.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.izri.aservico.controller.tesouraria.FXMLTabTesourariaCadastrarController">
+   <children>
+      <AnchorPane prefHeight="607.0" prefWidth="1252.0">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" styleClass="tabs" text="Cadastrar  Movimento  Financeiro" />
+            <ComboBox fx:id="comboBoxTipoMovimentacao" layoutX="153.0" layoutY="46.0" onAction="#comboBoxSelMoviAcao" prefHeight="22.0" prefWidth="95.0" />
+            <Label layoutX="14.0" layoutY="50.0" text="Selecione a Movimentação" />
+            <ComboBox fx:id="comboBoxSelTipo" disable="true" layoutX="352.0" layoutY="46.0" onAction="#comboBoxSelTipoAcao" prefWidth="95.0" />
+            <ComboBox fx:id="comboBoxNomeMembro" editable="true" layoutX="557.0" layoutY="40.0" prefHeight="22.0" prefWidth="338.0" visible="false" />
+            <DatePicker fx:id="campoDataMovimentacao" layoutX="136.0" layoutY="78.0" prefHeight="22.0" prefWidth="112.0" />
+            <TextField fx:id="campoValor" layoutX="324.0" layoutY="78.0" prefHeight="22.0" prefWidth="123.0" />
+            <TextArea fx:id="campoObservacao" layoutX="525.0" layoutY="45.0" prefHeight="74.0" prefWidth="368.0" wrapText="true" />
+            <Label layoutX="14.0" layoutY="82.0" text="Data da Movimentação" />
+            <Label layoutX="260.0" layoutY="50.0" text="Selecione o Tipo" />
+            <Label fx:id="labelNomeMembro" layoutX="458.0" layoutY="44.0" text="Nome do Membro" visible="false" />
+            <Label fx:id="labelObservacao" layoutX="458.0" layoutY="50.0" text="Observação" />
+            <Label layoutX="260.0" layoutY="82.0" text="Valor (R$)" />
+            <Separator layoutX="14.0" layoutY="172.0" prefHeight="3.0" prefWidth="1240.0" />
+            <Button fx:id="botaoSalvarMoviment" defaultButton="true" layoutX="1019.0" layoutY="134.0" mnemonicParsing="false" onAction="#botaoSalvarMovimentoAcao" prefHeight="22.0" prefWidth="139.0" styleClass="botaoSalvar" stylesheets="@/css/TelaPrincipal.css" text="Salvar Movimentação" />
+         	<Label layoutX="351.0" layoutY="408.0" prefHeight="110.0" prefWidth="350.0">
+	            <graphic>
+	            	<ImageView fx:id="logo350px" fitHeight="110.0" fitWidth="350.0" layoutX="351.0" layoutY="408.0" pickOnBounds="true" preserveRatio="true">
+		           		<image>
+		            		<Image url="/imagens/logoAppAServicoMenor350.png" />
+		            	</image>
+		            </ImageView>
+	            </graphic>
+	       	</Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

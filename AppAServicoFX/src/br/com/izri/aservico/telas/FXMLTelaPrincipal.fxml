@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.izri.aservico.controller.FXMLTelaPrincipalController">
+	<children>
+		<AnchorPane fx:id="idTelaPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1280.0">
+			<children>
+				<AnchorPane fx:id="idTelaPrincipalCorpo" layoutX="100.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseMoved="#painelMouseMoved" prefHeight="700.0" prefWidth="1184.0">
+				</AnchorPane>
+				<Label layoutX="10.0" layoutY="14.0" onMouseClicked="#botaoInicioMouseClicked" onMouseEntered="#botaoInicioMouseEntered" onMouseExited="#botaoInicioMouseExited" prefHeight="90.0" prefWidth="90.0">
+					<graphic>
+						<ImageView fx:id="imageViewBotaoInicio" fitHeight="90.0" fitWidth="90.0" layoutX="6.0" layoutY="125.0">
+							<image>
+								<Image url="/imagens/botao_inicio_normal.png" />
+							</image>
+						</ImageView>
+					</graphic>
+				</Label>
+				<Label fx:id="botaoMembroConsultar" layoutX="100.0" layoutY="149.0" onMouseClicked="#botaoMembrosConsultarMouseClicked" onMouseEntered="#botaoMembrosConsultarMouseEntered" onMouseExited="#botaoMembrosConsultarMouseExited" prefHeight="45.0" prefWidth="90.0" visible="false">
+					<graphic>
+						<ImageView fx:id="imageViewBotaoMembroConsultar" fitHeight="45.0" fitWidth="90.0" layoutX="100.0" layoutY="149.0">
+							<image>
+								<Image url="/imagens/sub_botao_consultar_membros.png" />
+							</image>
+						</ImageView>
+					</graphic>
+				</Label>
+				<Label fx:id="botaoMembroCadastrar" layoutX="100.0" layoutY="104.0" onMouseClicked="#botaoMembrosCadastrarMouseClicked" onMouseEntered="#botaoMembrosCadastrarMouseEntered" onMouseExited="#botaoMembrosCadastrarMouseExited" prefHeight="45.0" prefWidth="90.0" visible="false">
+					<graphic>
+						<ImageView fx:id="imageViewBotaoMembrosCadastrar" fitHeight="45.0" fitWidth="90.0" layoutX="100.0" layoutY="104.0">
+							<image>
+								<Image url="/imagens/sub_botao_cadastrar_membros.png" />
+							</image>
+						</ImageView>
+					</graphic>
+				</Label>
+				<Label layoutX="10.0" layoutY="104.0" onMouseEntered="#botaoMembrosMouseEntered" onMouseExited="#botaoMembrosMouseExited" prefHeight="90.0" prefWidth="90.0">
+					<graphic>
+						<ImageView fx:id="imageViewBotaoMembros" fitHeight="90.0" fitWidth="90.0" layoutX="10.0" layoutY="104.0">
+							<image>
+								<Image url="/imagens/botao_membros_normal.png" />
+							</image>
+						</ImageView>
+					</graphic>
+				</Label>
+				<Label layoutX="10.0" layoutY="194.0" onMouseEntered="#botaoSecretariaMouseEntered" onMouseExited="#botaoSecretariaMouseExited" prefHeight="90.0" prefWidth="90.0">
+					<graphic>
+						<ImageView fx:id="imageViewBotaoSecretaria" fitHeight="90.0" fitWidth="90.0" layoutX="10.0" layoutY="194.0">
+							<image>
+								<Image url="/imagens/botao_secretaria_normal.png" />
+							</image>
+						</ImageView>
+					</graphic>
+				</Label>
+				<Label fx:id="botaoSecretariaCadastrar" layoutX="100.0" layoutY="194.0" onMouseClicked="#botaoSecretariaCadastrarMouseClicked" onMouseEntered="#botaoSecretariaCadastrarMouseEntered" onMouseExited="#botaoSecretariaCadastrarMouseExited" prefHeight="45.0" prefWidth="90.0" visible="false">
+					<graphic>
+						<ImageView fx:id="imageViewBotaoSecretariaCadastrar" fitHeight="45.0" fitWidth="90.0" layoutX="100.0" layoutY="194.0">
+							<image>
+								<Image url="/imagens/sub_botao_cadastrar_secretaria.png" />
+							</image>
+						</ImageView>
+					</graphic>
+				</Label>
+				<Label fx:id="botaoSecretariaConsultar" layoutX="100.0" layoutY="239.0" onMouseClicked="#botaoSecretariaConsultarMouseClicked" onMouseEntered="#botaoSecretariaConsultarMouseEntered" onMouseExited="#botaoSecretariaConsultarMouseExited" prefHeight="45.0" prefWidth="90.0" visible="false">
+					<graphic>
+						<ImageView fx:id="imageViewBotaoSecretariaConsultar" fitHeight="45.0" fitWidth="90.0" layoutX="100.0" layoutY="239.0">
+							<image>
+								<Image url="/imagens/sub_botao_consultar_secretaria.png" />
+							</image>
+						</ImageView>
+					</graphic>
+				</Label>
+				<Label layoutX="10.0" layoutY="284.0" onMouseEntered="#botaoTesourariaMouseEntered" onMouseExited="#botaoTesourariaMouseExited" prefHeight="90.0" prefWidth="90.0">
+					<graphic>
+						<ImageView fx:id="imageViewBotaoTesouraria" fitHeight="90.0" fitWidth="90.0" layoutX="10.0" layoutY="284.0">
+							<image>
+								<Image url="/imagens/botao_tesouraria_normal.png" />
+							</image>
+						</ImageView>
+					</graphic>
+				</Label>
+				<Label fx:id="botaoTesouriaCadastrar" layoutX="100.0" layoutY="284.0" onMouseClicked="#botaoTesourariaCadastrarMouseClicked" onMouseEntered="#botaoTesourariaCadastrarMouseEntered" onMouseExited="#botaoTesourariaCadastrarMouseExited" prefHeight="45.0" prefWidth="90.0" visible="false">
+					<graphic>
+						<ImageView fx:id="imageViewBotaoTesourariaCadastrar" fitHeight="45.0" fitWidth="90.0" layoutX="100.0" layoutY="284.0">
+							<image>
+								<Image url="/imagens/sub_botao_cadastrar_tesouraria.png" />
+							</image>
+						</ImageView>
+					</graphic>
+				</Label>
+				<Label fx:id="botaoTesouriaConsultar" layoutX="100.0" layoutY="329.0" onMouseClicked="#botaoTesourariaConsultarMouseClicked" onMouseEntered="#botaoTesourariaConsultarMouseEntered" onMouseExited="#botaoTesourariaConsultarMouseExited" prefHeight="45.0" prefWidth="90.0" visible="false">
+					<graphic>
+						<ImageView fx:id="imageViewBotaoTesourariaConsultar" fitHeight="45.0" fitWidth="90.0" layoutX="100.0" layoutY="329.0">
+							<image>
+								<Image url="/imagens/sub_botao_consultar_tesouraria.png" />
+							</image>
+						</ImageView>
+					</graphic>
+				</Label>
+				<Label layoutX="10.0" layoutY="374.0" onMouseClicked="#botaoSistemaMouseClicked" onMouseEntered="#botaoSistemaMouseEntered" onMouseExited="#botaoSistemaMouseExited" prefHeight="90.0" prefWidth="90.0">
+					<graphic>
+						<ImageView fx:id="imageViewBotaoSistema" fitHeight="90.0" fitWidth="90.0" layoutX="10.0" layoutY="374.0">
+							<image>
+								<Image url="/imagens/botao_sistema_normal.png" />
+							</image>
+						</ImageView>
+					</graphic>
+				</Label>
+			</children>
+		</AnchorPane>
+		<Label fx:id="botaoSair" layoutX="1163.0" layoutY="652.0" onMouseEntered="#botaoSairMouseEntered" onMouseExited="#botaoSairMouseExited" onMousePressed="#botaoSairMousePressed" onMouseReleased="#botaoSairMouseReleased" prefHeight="35.0" prefWidth="100.0">
+			<graphic>
+				<ImageView fx:id="imageViewBotaoSair" fitHeight="35.0" fitWidth="100.0" layoutX="1163.0" layoutY="652.0">
+					<image>
+						<Image url="/imagens/botoes_gerais/botao_sair_normal.png" />
+					</image>
+				</ImageView>
+			</graphic>
+		</Label>
+	</children>
+</AnchorPane>

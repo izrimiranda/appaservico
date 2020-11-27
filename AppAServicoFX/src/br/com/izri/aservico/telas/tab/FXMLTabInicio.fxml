@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="607.0" prefWidth="1252.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.izri.aservico.controller.FXMLTabInicioController">
+   <children>
+      <AnchorPane layoutX="-1.0" prefHeight="607.0" prefWidth="1252.0">
+         <children>
+            <Label fx:id="idLogoInicio" layoutX="305.0" layoutY="184.0" prefHeight="171.0" prefWidth="544.0">
+            	<graphic>
+		            <ImageView fitHeight="171.0" fitWidth="544.0" pickOnBounds="true" preserveRatio="true">
+		            	<image>
+		            		<Image url="/imagens/logoAppAServicoGIF.gif" />
+		            	</image>
+		            </ImageView>
+	            </graphic>
+            </Label>
+            <Label layoutX="274.0" layoutY="375.0" text="&quot;Servi ao Senhor com alegria, e apresentai-vos a ele com cântico.&quot; Salmos 100:2">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+   </children>
+</AnchorPane>

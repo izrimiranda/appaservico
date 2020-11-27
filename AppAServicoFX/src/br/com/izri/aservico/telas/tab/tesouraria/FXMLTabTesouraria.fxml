@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="idTabTesouraria" prefHeight="607.0" prefWidth="1165.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.izri.aservico.controller.FXMLTabTesourariaController">
+   <children>
+      <AnchorPane layoutX="101.0" prefHeight="607.0" prefWidth="1165.0">
+         <children>
+            <Label layoutX="-95.0" layoutY="8.0" styleClass="tabs" text="Cadastrar  Movimento  Financeiro" />
+            <ComboBox fx:id="comboBoxTipoMovimentacao" layoutX="44.0" layoutY="40.0" onAction="#comboBoxSelMoviAcao" prefHeight="22.0" prefWidth="95.0" />
+            <Label layoutX="-95.0" layoutY="44.0" text="Selecione a Movimentação" />
+            <ComboBox fx:id="comboBoxSelTipo" disable="true" layoutX="243.0" layoutY="40.0" onAction="#comboBoxSelTipoAcao" prefWidth="95.0" />
+            <ComboBox fx:id="comboBoxNomeMembro" editable="true" layoutX="557.0" layoutY="40.0" prefHeight="22.0" prefWidth="338.0" visible="false" />
+            <DatePicker fx:id="campoDataMovimentacao" layoutX="27.0" layoutY="72.0" prefHeight="22.0" prefWidth="112.0" />
+            <TextField fx:id="campoValor" layoutX="215.0" layoutY="72.0" prefHeight="22.0" prefWidth="123.0" />
+            <TextArea fx:id="campoObservacao" layoutX="416.0" layoutY="39.0" prefHeight="74.0" prefWidth="368.0" wrapText="true" />
+            <Label layoutX="-95.0" layoutY="76.0" text="Data da Movimentação" />
+            <Label layoutX="151.0" layoutY="44.0" text="Selecione o Tipo" />
+            <Label fx:id="labelNomeMembro" layoutX="458.0" layoutY="44.0" text="Nome do Membro" visible="false" />
+            <Label fx:id="labelObservacao" layoutX="349.0" layoutY="44.0" text="Observação" />
+            <Label layoutX="151.0" layoutY="76.0" text="Valor (R$)" />
+            <Separator layoutX="-95.0" layoutY="161.0" prefHeight="3.0" prefWidth="1240.0" />
+            <Button fx:id="botaoSalvarMoviment" defaultButton="true" layoutX="910.0" layoutY="128.0" mnemonicParsing="false" onAction="#botaoSalvarMovimentoAcao" prefHeight="22.0" prefWidth="139.0" styleClass="botaoSalvar" stylesheets="@/css/TelaPrincipal.css" text="Salvar Movimentação" />
+            <Label layoutX="-94.0" layoutY="173.0" styleClass="tabs" text="Consultar  Movimento  Financeiro" />
+            <TableView fx:id="idTabelaDizimo" layoutX="-95.0" layoutY="258.0" onMouseClicked="#selecionarLinhaTabelaOnMouseClicked" prefHeight="285.0" prefWidth="989.0">
+              <columns>
+                <TableColumn fx:id="colunaDizimoData" prefWidth="100.0" text="Data de Entrada" />
+                <TableColumn fx:id="colunaDizimoValor" prefWidth="80.0" text="Valor" />
+                <TableColumn fx:id="colunaDizimoNomeMembro" prefWidth="241.0" text="Nome do Membro" />
+                <TableColumn fx:id="colunaDizimoObservacao" prefWidth="268.0" text="Observação" />
+                <TableColumn fx:id="colunaDizimoCadastradoPor" prefWidth="250.0" text="Cadastrado Por" />
+              </columns>
+            </TableView>
+            <TableView fx:id="idTabelaOFerta" layoutX="14.0" layoutY="258.0" onMouseClicked="#selecionarLinhaTabelaOnMouseClicked" prefHeight="285.0" prefWidth="989.0" visible="false">
+              <columns>
+                <TableColumn fx:id="colunaOfertaData" prefWidth="100.0" text="Data de Entrada" />
+                <TableColumn fx:id="colunaOfertaValor" prefWidth="80.0" text="Valor" />
+                <TableColumn fx:id="colunaOfertaObservacao" prefWidth="500.0" text="Observação" />
+                <TableColumn fx:id="colunaOfertaCadastradoPor" prefWidth="239.0" text="Cadastrado Por" />
+              </columns>
+            </TableView>
+            <TableView fx:id="idTabelaSaida" layoutX="14.0" layoutY="258.0" onMouseClicked="#selecionarLinhaTabelaOnMouseClicked" prefHeight="285.0" prefWidth="989.0" visible="false">
+              <columns>
+                <TableColumn fx:id="colunaTransacaoData" prefWidth="100.0" text="Data de Saída" />
+                <TableColumn fx:id="colunaTransacaoValor" prefWidth="80.0" text="Valor" />
+                <TableColumn fx:id="colunaTransacaoObservacao" prefWidth="500.0" text="Observação" />
+                <TableColumn fx:id="colunaTransacaoCadastradoPor" prefWidth="239.0" text="Cadastrado Por" />
+              </columns>
+            </TableView>
+            <Label layoutX="-95.0" layoutY="199.0" prefHeight="14.0" prefWidth="129.0" text="Selecione a Movimentação" />
+            <ComboBox fx:id="comboBoxSelMovimentConsulta" layoutX="44.0" layoutY="195.0" onAction="#comboBoxSelMovimentConsultaAcao" prefHeight="22.0" prefWidth="95.0" />
+            <Label layoutX="150.0" layoutY="199.0" text="Selecione o Tipo" />
+            <ComboBox fx:id="comboBoxSelTipoConsulta" disable="true" layoutX="242.0" layoutY="195.0" onAction="#comboBoxSelTipoConsultaAcao" prefWidth="95.0" />
+            <Label layoutX="-94.0" layoutY="230.0" text="Por Data: Entre" />
+            <DatePicker fx:id="campoPesquisaDataUm" layoutX="-7.0" layoutY="226.0" onAction="#campoPesquisaDataUmAcao" prefWidth="112.0" />
+            <Label layoutX="115.0" layoutY="230.0" text="e" />
+            <DatePicker fx:id="campoPesquisaDataDois" layoutX="130.0" layoutY="226.0" prefWidth="112.0" />
+            <Button layoutX="911.0" layoutY="226.0" mnemonicParsing="false" onAction="#botaoPesquisarAcao" prefHeight="22.0" prefWidth="139.0" styleClass="botaoPesquisar" stylesheets="@/css/TelaPrincipal.css" text="Pesquisar " />
+            <Label fx:id="idLabelNomeMembroConsulta" layoutX="458.0" layoutY="199.0" text="Nome do Membro" visible="false" />
+            <ComboBox fx:id="comboBoxNomeMembroConsulta" editable="true" layoutX="557.0" layoutY="195.0" prefHeight="22.0" prefWidth="338.0" visible="false" />
+            <Button fx:id="idBotaoExcluir" disable="true" layoutX="771.0" layoutY="226.0" mnemonicParsing="false" onAction="#botaoExcluirAcao" prefHeight="22.0" prefWidth="123.0" styleClass="botaoExcluirEspaco" stylesheets="@/css/TelaPrincipal.css" text="Excluir" wrapText="true" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e0e4e8" height="285.0" layoutX="898.0" layoutY="258.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5" width="151.0" />
+            <Label layoutX="907.0" layoutY="263.0" text="Movimento Financeiro">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="941.0" layoutY="451.0" prefHeight="15.0" prefWidth="80.0" text="Total Saidas:" textFill="#ff0404">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font></Label>
+            <Label layoutX="937.0" layoutY="379.0" prefHeight="15.0" prefWidth="87.0" text="Total Entradas" textFill="#1e9e26">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <Separator layoutX="901.0" layoutY="280.0" prefHeight="3.0" prefWidth="145.0" />
+            <Label fx:id="idLabelDizimoOferta" layoutX="907.0" layoutY="308.0" text="Dizimos:">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <Separator layoutX="904.0" layoutY="376.0" prefHeight="3.0" prefWidth="139.0">
+               <effect>
+                  <Blend />
+               </effect>
+            </Separator>
+            <Label layoutX="907.0" layoutY="398.0" text="Dizimos:">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="913.0" layoutY="286.0" prefHeight="15.0" prefWidth="123.0" text="Entradas Pesquisadas" textFill="#1e9e26">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="920.0" layoutY="329.0" prefHeight="15.0" prefWidth="112.0" text="Saídas Pesquisadas" textFill="#ff0404">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="908.0" layoutY="351.0" text="Total:">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="907.0" layoutY="417.0" text="Ofertas:">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="907.0" layoutY="437.0" text="Total:">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <Label fx:id="idLabelValorEntradaPesquisada" layoutX="962.0" layoutY="308.0" prefHeight="14.0" prefWidth="87.0">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <Label fx:id="idLabelValorSaidasPesquisadas" layoutX="962.0" layoutY="351.0" prefHeight="14.0" prefWidth="87.0">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="906.0" layoutY="469.0" text="Total:">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <Separator layoutX="904.0" layoutY="488.0" prefHeight="3.0" prefWidth="139.0">
+               <effect>
+                  <Blend />
+               </effect>
+            </Separator>
+            <Label layoutX="923.0" layoutY="490.0" prefHeight="16.0" prefWidth="101.0" text="Total em Caixa" textFill="#3d10c3">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="idLabelValorTotalCaixa" layoutX="918.0" layoutY="513.0" prefHeight="18.0" prefWidth="112.0">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="idLabelTotalSaidaConsolidada" layoutX="962.0" layoutY="469.0" prefHeight="14.0" prefWidth="87.0">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <Label fx:id="idLabelTotalEntradaConsolidada" layoutX="962.0" layoutY="437.0" prefHeight="14.0" prefWidth="87.0">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <Label fx:id="idLabelValorOfertaConsolidada" layoutX="962.0" layoutY="417.0" prefHeight="14.0" prefWidth="87.0">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <Label fx:id="idLabelValorDizimoConsolidado" layoutX="962.0" layoutY="398.0" prefHeight="14.0" prefWidth="87.0">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+   </children>
+</AnchorPane>

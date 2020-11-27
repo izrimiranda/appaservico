@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="607.0" prefWidth="1252.0" stylesheets="@/css/TelaPrincipal.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.izri.aservico.controller.FXMLTabMembroCadastrarController">
+	<children>
+		<AnchorPane layoutX="101.0" prefHeight="607.0" prefWidth="1151.0">
+			<children>
+				<Separator layoutY="288.0" prefHeight="3.0" prefWidth="1145.0" />
+				<Label layoutX="14.0" layoutY="7.0" styleClass="tabs" text="Cadastrar  Membros" />
+				<Label layoutX="14.0" layoutY="291.0" styleClass="tabs" text="Consultar  Membros" />
+				<Label layoutX="14.0" layoutY="46.0" text="Nome Completo*" />
+				<Label layoutX="14.0" layoutY="75.0" text="Rua*" />
+				<TextField fx:id="campoNomeCompleto" layoutX="107.0" layoutY="42.0" prefHeight="22.0" prefWidth="299.0" />
+				<TextField fx:id="campoRua" layoutX="50.0" layoutY="71.0" prefHeight="22.0" prefWidth="285.0" />
+				<Label layoutX="346.0" layoutY="75.0" text="Número*" />
+				<TextField fx:id="campoNumero" layoutX="399.0" layoutY="71.0" prefHeight="22.0" prefWidth="62.0" />
+				<TextField fx:id="campoComplemento" layoutX="552.0" layoutY="71.0" prefHeight="22.0" prefWidth="127.0" />
+				<Label layoutX="474.0" layoutY="75.0" text="Complemento" />
+				<Label layoutX="14.0" layoutY="103.0" text="Bairro" />
+				<TextField fx:id="campoBairro" layoutX="54.0" layoutY="100.0" prefHeight="22.0" prefWidth="162.0" />
+				<TextField fx:id="campoCidade" layoutX="277.0" layoutY="99.0" prefHeight="22.0" prefWidth="147.0" />
+				<Label layoutX="229.0" layoutY="103.0" text="Cidade*" />
+	            <Label layoutX="435.0" layoutY="103.0" text="CEP" />
+	            <TextField fx:id="campoCEP" layoutX="463.0" layoutY="100.0" prefHeight="22.0" prefWidth="88.0" />
+	            <ComboBox fx:id="comboBoxEstado" layoutX="616.0" layoutY="99.0" prefHeight="22.0" prefWidth="62.0" />
+				<Label layoutX="568.0" layoutY="103.0" text="Estado*" />
+				<Label layoutX="15.0" layoutY="133.0" text="Email" />
+				<TextField fx:id="campoEmail" layoutX="53.0" layoutY="129.0" prefHeight="22.0" prefWidth="223.0" />
+				<TextField fx:id="campoCelularUm" layoutX="69.0" layoutY="158.0" />
+				<TextField fx:id="campoCelularDois" layoutX="68.0" layoutY="187.0" />
+				<Label layoutX="15.0" layoutY="162.0" text="Celular 1" />
+				<Label layoutX="16.0" layoutY="191.0" text="Celular 2" />
+				<Label layoutX="256.0" layoutY="220.0" text="Data de Batismo" />
+				<Label layoutX="16.0" layoutY="249.0" text="Cargo Eclesiástico*" />
+				<TextField fx:id="campoTelResidencial" layoutX="325.0" layoutY="158.0" />
+				<TextField fx:id="campoTelTrabalho" layoutX="325.0" layoutY="187.0" />
+	            <DatePicker fx:id="campoDataAniversario" layoutX="123.0" layoutY="216.0" prefHeight="22.0" prefWidth="118.0" />
+	            <DatePicker fx:id="campoDataBatismo" layoutX="348.0" layoutY="216.0" prefWidth="118.0" />
+				<Label layoutX="215.0" layoutY="162.0" text="Telefone Residencial" /> 
+				<Label layoutX="216.0" layoutY="191.0" text="Telefone Trabalho" />
+				<Label layoutX="290.0" layoutY="249.0" text="Célula" />
+				<Label layoutX="498.0" layoutY="249.0" text="Turma Escola Bíblica" />
+				<ComboBox fx:id="comboBoxCargoEclesiastico" layoutX="118.0" layoutY="245.0" prefHeight="22.0" prefWidth="162.0" />
+				<ComboBox fx:id="comboBoxCelula" layoutX="331.0" layoutY="245.0" prefHeight="22.0" prefWidth="157.0" />
+				<ComboBox fx:id="comboBoxTurmaEscolaBiblica" layoutX="609.0" layoutY="245.0" prefHeight="22.0" prefWidth="165.0" />
+				<Label layoutX="15.0" layoutY="220.0" text="Data de Aniversário*" />
+				<Separator layoutX="15.0" layoutY="28.0" prefWidth="200.0" />
+				<Button fx:id="botaoAlterarMembro" disable="true" layoutX="1032.0" layoutY="312.0" mnemonicParsing="false" onAction="#alterarMembroAcao" prefHeight="22.0" prefWidth="108.0" styleClass="botaoAlterar" text="Alterar Membro" />
+            <TableView fx:id="tabelaMembros" editable="true" layoutX="13.0" layoutY="347.0" onMouseClicked="#selecionarLinhaTabelaAcao" prefHeight="200.0" prefWidth="1134.0">
+            <columnResizePolicy>
+            	<TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+        	</columnResizePolicy>
+              <columns>
+                <TableColumn fx:id="colunaNome" prefWidth="200.0" text="Nome" />
+                <TableColumn fx:id="colunaCargoEclesiastico" prefWidth="90.0" text="Cargo Ecle." />
+                <TableColumn fx:id="colunaCelula" prefWidth="90.0" text="Célula" />
+                <TableColumn fx:id="colunaDataAniversario" prefWidth="100.0" text="Data Aniversário" />
+                <TableColumn fx:id="colunaDataBatismo" prefWidth="90.0" text="Data Batismo" />
+                <TableColumn fx:id="colunaCelularUm" prefWidth="90.0" text="Celular 1" />
+                <TableColumn fx:id="colunaCelularDois" prefWidth="90.0" text="Celular 2" />
+                <TableColumn fx:id="colunaRua" prefWidth="250.0" text="Rua" />
+                <TableColumn fx:id="colunaNumero" prefWidth="30.0" text="Número" />
+                <TableColumn fx:id="colunaBairro" prefWidth="90.0" text="Bairro" />
+              </columns>
+            </TableView>
+            <Label layoutX="13.0" layoutY="316.0" text="Pesquisar por*:" />
+            <ComboBox fx:id="comboBoxPesquisarPor" layoutX="98.0" layoutY="312.0" onAction="#comboBoxPesquisarPorAcao" prefHeight="22.0" prefWidth="140.0" />
+            <TextField fx:id="campoPesquisarPor" layoutX="248.0" layoutY="312.0" prefHeight="22.0" prefWidth="194.0" />
+            <Label layoutX="451.0" layoutY="316.0" text="Data entre:" />
+            <DatePicker fx:id="campoDataUm" disable="true" layoutX="515.0" layoutY="312.0" onAction="#campoDataUmAcao" prefHeight="22.0" prefWidth="108.0" />
+            <DatePicker fx:id="campoDataDois" disable="true" layoutX="650.0" layoutY="312.0" prefHeight="22.0" prefWidth="108.0" />
+            <Label layoutX="633.0" layoutY="316.0" text="e" />
+      				<Button defaultButton="true" layoutX="1022.0" layoutY="256.0" mnemonicParsing="false" onAction="#salvarMembroAcao" prefHeight="22.0" prefWidth="118.0" styleClass="botaoSalvar" text="Salvar Membro" />
+            <Button fx:id="botaoPesquisar" layoutX="774.0" layoutY="312.0" mnemonicParsing="false" onAction="#botaoPesquisarPorAcao" prefHeight="22.0" prefWidth="108.0" styleClass="botaoPesquisar" text="Pesquisar" textAlignment="CENTER" />
+            <Button fx:id="botaoExcluirMembro" disable="true" layoutX="914.0" layoutY="312.0" mnemonicParsing="false" onAction="#botaoExcluirMembroAcao" prefHeight="22.0" prefWidth="108.0" styleClass="botaoExcluir" text="Excluir Membro" />
+            <Label layoutX="940.0" layoutY="547.0" text="Membros:">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelNaoMembros" layoutX="1022.0" layoutY="547.0">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="1041.0" layoutY="548.0" text="Não Membros: ">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelQuantNaoMembros" layoutX="1131.0" layoutY="548.0" text="1">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+			</children>
+		</AnchorPane>
+	</children>
+</AnchorPane>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.*?>
+
+<AnchorPane fx:id="idTabTesouraria" prefHeight="607.0" prefWidth="1212.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.izri.aservico.controller.tesouraria.FXMLTabTesourariaConsultarController">
+   <children>
+      <AnchorPane prefHeight="607.0" prefWidth="1252.0">
+         <children>
+            <ComboBox fx:id="comboBoxNomeMembroConsulta" editable="true" layoutX="558.0" layoutY="36.0" prefHeight="22.0" prefWidth="338.0" visible="false" />
+            <Label fx:id="idLabelNomeMembroConsulta" layoutX="459.0" layoutY="40.0" text="Nome do Membro" visible="false" />
+            <Label layoutX="15.0" layoutY="14.0" styleClass="tabs" text="Consultar  Movimento  Financeiro" />
+            <TableView fx:id="idTabelaDizimo" layoutX="15.0" layoutY="99.0" onMouseClicked="#selecionarLinhaTabelaOnMouseClicked" prefHeight="285.0" prefWidth="989.0">
+              <columns>
+                <TableColumn fx:id="colunaDizimoData" prefWidth="100.0" text="Data de Entrada" />
+                <TableColumn fx:id="colunaDizimoValor" prefWidth="80.0" text="Valor" />
+                <TableColumn fx:id="colunaDizimoNomeMembro" prefWidth="241.0" text="Nome do Membro" />
+                <TableColumn fx:id="colunaDizimoObservacao" prefWidth="268.0" text="Observação" />
+                <TableColumn fx:id="colunaDizimoCadastradoPor" prefWidth="250.0" text="Cadastrado Por" />
+              </columns>
+            </TableView>
+            <TableView fx:id="idTabelaOFerta" layoutX="15.0" layoutY="99.0" onMouseClicked="#selecionarLinhaTabelaOnMouseClicked" prefHeight="285.0" prefWidth="989.0" visible="false">
+              <columns>
+                <TableColumn fx:id="colunaOfertaData" prefWidth="100.0" text="Data de Entrada" />
+                <TableColumn fx:id="colunaOfertaValor" prefWidth="80.0" text="Valor" />
+                <TableColumn fx:id="colunaOfertaObservacao" prefWidth="500.0" text="Observação" />
+                <TableColumn fx:id="colunaOfertaCadastradoPor" prefWidth="239.0" text="Cadastrado Por" />
+              </columns>
+            </TableView>
+            <TableView fx:id="idTabelaSaida" layoutX="15.0" layoutY="99.0" onMouseClicked="#selecionarLinhaTabelaOnMouseClicked" prefHeight="285.0" prefWidth="989.0" visible="false">
+              <columns>
+                <TableColumn fx:id="colunaTransacaoData" prefWidth="100.0" text="Data de Saída" />
+                <TableColumn fx:id="colunaTransacaoValor" prefWidth="80.0" text="Valor" />
+                <TableColumn fx:id="colunaTransacaoObservacao" prefWidth="500.0" text="Observação" />
+                <TableColumn fx:id="colunaTransacaoCadastradoPor" prefWidth="239.0" text="Cadastrado Por" />
+              </columns>
+            </TableView>
+            <Label layoutX="14.0" layoutY="40.0" prefHeight="14.0" prefWidth="129.0" text="Selecione a Movimentação" />
+            <ComboBox fx:id="comboBoxSelMovimentConsulta" layoutX="153.0" layoutY="36.0" onAction="#comboBoxSelMovimentConsultaAcao" prefHeight="22.0" prefWidth="95.0" />
+            <Label layoutX="259.0" layoutY="40.0" text="Selecione o Tipo" />
+            <ComboBox fx:id="comboBoxSelTipoConsulta" disable="true" layoutX="351.0" layoutY="36.0" onAction="#comboBoxSelTipoConsultaAcao" prefWidth="95.0" />
+            <Label layoutX="15.0" layoutY="71.0" text="Por Data: Entre" />
+            <DatePicker fx:id="campoPesquisaDataUm" layoutX="102.0" layoutY="67.0" onAction="#campoPesquisaDataUmAcao" prefWidth="112.0" />
+            <Label layoutX="224.0" layoutY="71.0" text="e" />
+            <DatePicker fx:id="campoPesquisaDataDois" layoutX="239.0" layoutY="67.0" prefWidth="112.0" />
+            <Button layoutX="1020.0" layoutY="67.0" mnemonicParsing="false" onAction="#botaoPesquisarAcao" prefHeight="22.0" prefWidth="139.0" styleClass="botaoPesquisar" stylesheets="@/css/TelaPrincipal.css" text="Pesquisar " />
+            <Button fx:id="idBotaoExcluir" disable="true" layoutX="880.0" layoutY="67.0" mnemonicParsing="false" onAction="#botaoExcluirAcao" prefHeight="22.0" prefWidth="123.0" styleClass="botaoExcluirEspaco" stylesheets="@/css/TelaPrincipal.css" text="Excluir" wrapText="true" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e0e4e8" height="285.0" layoutX="1007.0" layoutY="99.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5" width="151.0" />
+            <Label layoutX="1016.0" layoutY="104.0" text="Movimento Financeiro">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="1050.0" layoutY="292.0" prefHeight="15.0" prefWidth="80.0" text="Total Saidas:" textFill="#ff0404">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font></Label>
+            <Label layoutX="1046.0" layoutY="220.0" prefHeight="15.0" prefWidth="87.0" text="Total Entradas" textFill="#1e9e26">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <Separator layoutX="1010.0" layoutY="121.0" prefHeight="3.0" prefWidth="145.0" />
+            <Label fx:id="idLabelDizimoOferta" layoutX="1016.0" layoutY="149.0" text="Dizimos:">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <Separator layoutX="1013.0" layoutY="217.0" prefHeight="3.0" prefWidth="139.0">
+               <effect>
+                  <Blend />
+               </effect>
+            </Separator>
+            <Label layoutX="1016.0" layoutY="239.0" text="Dizimos:">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="1022.0" layoutY="127.0" prefHeight="15.0" prefWidth="123.0" text="Entradas Pesquisadas" textFill="#1e9e26">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="1029.0" layoutY="170.0" prefHeight="15.0" prefWidth="112.0" text="Saídas Pesquisadas" textFill="#ff0404">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="1017.0" layoutY="192.0" text="Total:">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="1016.0" layoutY="258.0" text="Ofertas:">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="1016.0" layoutY="278.0" text="Total:">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <Label fx:id="idLabelValorEntradaPesquisada" layoutX="1071.0" layoutY="149.0" prefHeight="14.0" prefWidth="87.0">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <Label fx:id="idLabelValorSaidasPesquisadas" layoutX="1071.0" layoutY="192.0" prefHeight="14.0" prefWidth="87.0">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="1015.0" layoutY="310.0" text="Total:">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <Separator layoutX="1013.0" layoutY="330.0" prefHeight="3.0" prefWidth="139.0">
+               <effect>
+                  <Blend />
+               </effect>
+            </Separator>
+            <Label layoutX="1032.0" layoutY="331.0" prefHeight="16.0" prefWidth="101.0" text="Total em Caixa" textFill="#3d10c3">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="idLabelValorTotalCaixa" layoutX="1027.0" layoutY="354.0" prefHeight="18.0" prefWidth="112.0">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="idLabelTotalSaidaConsolidada" layoutX="1071.0" layoutY="310.0" prefHeight="14.0" prefWidth="87.0">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <Label fx:id="idLabelTotalEntradaConsolidada" layoutX="1071.0" layoutY="278.0" prefHeight="14.0" prefWidth="87.0">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <Label fx:id="idLabelValorOfertaConsolidada" layoutX="1071.0" layoutY="258.0" prefHeight="14.0" prefWidth="87.0">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <Label fx:id="idLabelValorDizimoConsolidado" layoutX="1071.0" layoutY="239.0" prefHeight="14.0" prefWidth="87.0">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <Separator layoutX="14.0" layoutY="392.0" prefHeight="3.0" prefWidth="1240.0" />
+            <Label layoutX="351" layoutY="408" prefHeight="110.0" prefWidth="350.0">
+	            <graphic>
+	            	<ImageView fx:id="logo350px" fitHeight="110.0" fitWidth="350.0" layoutX="351.0" layoutY="408.0" pickOnBounds="true" preserveRatio="true">
+		           		<image>
+		            		<Image url="/imagens/logoAppAServicoMenor350.png" />
+		            	</image>
+		            </ImageView>
+	            </graphic>
+	       	</Label>
+            <Button fx:id="botaoGerarRelatorio" layoutX="751.0" layoutY="67.0" mnemonicParsing="false" onAction="#botaoGerarRelatorioAcao" prefHeight="22.0" prefWidth="112.0" text="Gerar Relatorio" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="607.0" prefWidth="1252.0" stylesheets="@/css/TelaPrincipal.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.izri.aservico.controller.FXMLTabMembroController">
+	<children>
+		<AnchorPane layoutX="101.0" layoutY="53.0" prefHeight="554.0" prefWidth="1151.0">
+			<children>
+				
+			</children>
+		</AnchorPane>
+      <Label fx:id="botaoMembroCadastrar" layoutX="101.0" layoutY="7.0" prefHeight="42.0" prefWidth="110.0" text="Label" />
+	</children>
+</AnchorPane>

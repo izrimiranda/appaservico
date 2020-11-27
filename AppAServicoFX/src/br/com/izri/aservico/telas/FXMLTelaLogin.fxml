@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="telaLogin" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="800.0" onMouseEntered="#mouseEntrou" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.izri.aservico.controller.FXMLTelaLoginController">
+   <children>
+      <AnchorPane layoutX="-322.0" layoutY="-518.0" onMouseEntered="#mouseEntrou" prefHeight="720.0" prefWidth="1280.0" />
+      <TextField id="campoLogin" fx:id="campoLogin" layoutX="308.0" layoutY="418.0" prefHeight="22.0" prefWidth="185.0" />
+      <PasswordField fx:id="campoSenha" layoutX="308.0" layoutY="469.0" prefHeight="22.0" prefWidth="185.0" />
+      <Button id="botaoEntrar" defaultButton="true" focusTraversable="false" layoutX="308.0" layoutY="506.0" mnemonicParsing="false" onAction="#botaoEntrarAcao" prefHeight="22.0" prefWidth="80.0" text="Entrar">
+         <font>
+            <Font name="Gravedigger" size="9.0" />
+         </font>
+      </Button>
+      <Button id="botaoFechar" fx:id="botaoFechar" layoutX="413.0" layoutY="506.0" mnemonicParsing="false" onAction="#botaoFecharAcao" prefHeight="22.0" prefWidth="80.0" text="Fechar">
+         <font>
+            <Font name="Gravedigger" size="9.0" />
+         </font>
+      </Button>
+      <Label layoutX="308.0" layoutY="400.0" text="Login">
+         <font>
+            <Font name="Gravedigger" size="9.0" />
+         </font>
+      </Label>
+      <Label layoutX="309.0" layoutY="448.0" text="Senha" textOverrun="CLIP">
+         <font>
+            <Font name="Gravedigger" size="9.0" />
+         </font>
+      </Label>
+      <Label id="logoTelaLogin" layoutX="128.0" layoutY="139.0" prefHeight="171.0" prefWidth="544.0">
+      	<graphic>
+	      	<ImageView fitHeight="171.0" fitWidth="544.0" preserveRatio="true">
+	      		<image>
+	      			<Image url="/imagens/logoAppAServico.png" />
+	      		</image>
+	      	</ImageView>
+      	</graphic>
+      </Label>
+      <Button fx:id="botaoEsqueceuSenha" layoutX="672.0" layoutY="564.0" mnemonicParsing="false" onAction="#exibirPopupEsqueceuSenha" prefHeight="22.0" prefWidth="114.0" text="Esqueceu a senha?" />
+   </children>
+</AnchorPane>

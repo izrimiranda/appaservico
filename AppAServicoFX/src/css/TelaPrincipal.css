@@ -1,0 +1,54 @@
+
+.tabs {
+	-fx-font-family: "Gravedigger";
+	-fx-font-size: 7pt;
+}
+
+.labelTituloTabs {
+	-fx-font-family: "Gravedigger";
+	-fx-font-size: 7pt;
+}
+
+.botaoSalvar {
+	-fx-graphic: url(/imagens/botaoConfirmar15.png);
+	-fx-padding: 0, 0, 0, 8px;
+}
+
+.botaoFechar {
+	-fx-graphic: url(/imagens/botaoCancelar15.png);
+}
+
+.botaoAlterar {
+	-fx-graphic: url(/imagens/botaoAlterar15.png);
+	-fx-padding: 0, 0, 0, 4px;
+}
+
+.botaoPesquisar {
+	-fx-graphic: url(/imagens/botaoPesquisar15.png);
+	-fx-padding: 0, 0, 0, 8px;
+}
+
+.botaoExcluir {
+	-fx-graphic: url(/imagens/botaoExcluir15.png);
+}
+
+.botaoBaixar {
+	-fx-graphic: url(/imagens/botaoDownload15.png);
+}
+
+.table-column {
+  -fx-alignment: CENTER_RIGHT;
+}
+
+.botaoExcluirEspaco {
+	-fx-graphic: url(/imagens/botaoExcluir15_espaco.png);
+	-fx-alignment: LEFT;
+}
+
+.table-cell {
+    -fx-alignment: CENTER;
+}
+
+.paneBackground{
+	-fx-background-color: #000000;
+}
